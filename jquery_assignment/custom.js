@@ -1,57 +1,57 @@
 $(document).ready(function()
     {
-        $(".button1").click(function()
+        $(".section1:last").click(function()
         {
-            $(".height").css({"height": "300px"});
+            $(".section1 .height").css({"height": "300px"});
         });
-        $(".button2").click(function()
+        $(".section2 button").click(function()
         {
-            $(".height").animate({ marginLeft: 400 }, 'slow');
+            $(".section2 .height").animate({ marginLeft: 400 }, 'slow');
         });
         $(window).scroll(function()
         {
-            if ($(window).scrollTop() >= 700) 
+            if ($(window).scrollTop() >= 700 && $(window).scrollTop() <= 900) 
             {
-                $(".full").css({"position": "fixed","top": "0","left": "0","width": "100%"});
+                $(".full").css({"position": "fixed","top": "0","width": "100%"});
             }  
-            if($(window).scrollTop() >= 900 || $(window).scrollTop() < 700)
+            else
             {
                 $(".full").css({"position": "static"});
             }
         });
-        $(".button4").click(function()
+        $(".section5 button").click(function()
         {
-            $(".p2").wrap("<div>");
+            $("p:nth-child(3)").wrap("<div class='wrapped'></div>");
         });
-        $(".button4").click(function()
+        $(".section9 button").click(function()
         {
             $("#test3").val("it worked");
             $("#test3").attr('disabled','disabled');
         });
-        $(".button6").click(function()
+        $(".section6 button").click(function()
         {
             $("p").not(".intro").css({"background-color":"blue"});
         });
-        $(".button7").click(function()
+        $(".section7 button").click(function()
         {
             $(".section7 li:lt(6):gt(2)").css({"background-color":"red"});
         });
-        $(".button8").click(function()
+        $(".section8 button").click(function()
         {
             $(".section8 li:gt(0)").css({"border-color":"red"});
         });
-        $(".button-tab1").click(function()
+        $(".tabcontent :eq(0)").click(function()
         {
-            $(".tab1").html("tab1 value changed").css({"background-color":"blue"});
+            $(".content").css({"display":"none"});
+            $(".active").css({"display":"block"});
         });
-        $(".button-tab2").click(function()
+        $(".tabcontent :eq(1)").click(function()
         {
-            $(".tab2").html("tab2 value changed").css({"background-color":"red"});
+            $(".content").css({"display":"block"});
+            $(".active").css({"display":"none"});
         });
-        $('.scrolltop').click(function()
+        $('.section10 button').click(function()
         { 
             $("html").animate({ scrollTop: 0 }, 1500);  
         }); 
-
-
     });
